@@ -140,5 +140,8 @@ with col2:
     if st.button("Run Code"):
         #code =st.session_state.code_to_execute.replace("\\n", "\n")
         #st.text(code)
-        exec(code)
+        try:
+            exec(code)
+        except Exception as e:
+            st.error(f"An error occurred while executing the code: {e}")
 
